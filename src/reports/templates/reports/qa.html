@@ -1,0 +1,742 @@
+{% extends "reports/base.html" %}
+ 
+{% block title %}QA{% endblock %} 
+
+{% block css_qa %}class="active"{% endblock %}
+
+{% load staticfiles %}
+
+{% load reports_extras %} 
+
+{% block content %}
+
+<div class="row">
+	<div class="col-md-4">
+	{% include "reports/includes/week_title.html" with page_name="QA" %}
+	</div>
+	
+	<div class="col-md-*" style="text-align: right">
+    <h4></br> 
+        <small style="font-size: 70%;">
+        {% if week.thisweek.week == week.week %}
+            <a href="{% url 'reports:index_qa' prevweek.year prevweek.week %}"><span class="glyphicon glyphicon-chevron-left"></span> Prev Week</a> 
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        {% else %}
+            <a href="{% url 'reports:index_qa' prevweek.year prevweek.week %}"><span class="glyphicon glyphicon-chevron-left"></span> Prev Week</a> 
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'reports:index_qa' %}"><span class="glyphicon glyphicon-calendar"></span> This Week</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'reports:index_qa' nextweek.year nextweek.week %}">Next Week <span class="glyphicon glyphicon-chevron-right"></span></a>
+        {% endif %}
+        </small>
+		</h4>
+	</div>
+</div>
+
+
+
+<table class="table ">
+	<tbody>
+		<tr>
+			<td>
+				<div class="row">
+					<div class="col-md-5">
+						<div id="projects_share_container"
+							style="width: 100%; height: 300px; backgournd-color: red"></div>
+					</div>
+					<div class="col-md-7">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="active"><a href="#overview_verified" role="tab"
+								data-toggle="tab">Verified Defects</a></li>
+							<li><a href="#detail_verified" role="tab" data-toggle="tab">Detail</a></li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div class="tab-pane active" id="overview_verified">
+								<div id="verified_defects_column_container"
+									style="height: 250px; text-align: center">
+									<br /> <br /> <br /> <br /> <img
+										src="{% static 'reports/loading29.gif' %}"> <i>&nbsp;&nbsp;Fetching
+										live data from ClearQuest...</i>
+								</div>
+							</div>
+							<div class="tab-pane" id="detail_verified"
+								style="height: 250px; overflow: auto">
+								<table id="ecm_table_verified"
+									class="table table-bordered table-striped ">
+									<tbody>
+										<tr>
+											<th class="col-md-2">ECM</th>
+											<th class="col-md-*">Headline</th>
+											<th class="col-md-1">Severity</th>
+											<th class="col-md-1">User</th>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<div class="row">
+					<div class="col-md-8">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="active"><a href="#overview_submitted" role="tab"
+								data-toggle="tab">Submitted Defects</a></li>
+							<li><a href="#detail_submitted" role="tab" data-toggle="tab">Detail</a></li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div class="tab-pane active" id="overview_submitted">
+								<div id="submitted_defects_column_container"
+									style="height: 220px; text-align: center">
+									<br /> <br /> <br /> <br /> <img
+										src="{% static 'reports/loading29.gif' %}"> <i>&nbsp;&nbsp;Fetching
+										live data from ClearQuest...</i>
+								</div>
+							</div>
+							<div class="tab-pane" id="detail_submitted"
+								style="height: 220px; overflow: auto">
+								<table id="ecm_table_submitted"
+									class="table table-bordered table-striped ">
+									<tbody>
+										<tr>
+											<th class="col-md-2">ECM</th>
+											<th class="col-md-*">Headline</th>
+											<th class="col-md-1">Severity</th>
+											<th class="col-md-1">User</th>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="active"><a href="#overview_rejected" role="tab"
+								data-toggle="tab">Rejected Defects</a></li>
+							<li><a href="#detail_rejected" role="tab" data-toggle="tab">Detail</a></li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div class="tab-pane active" id="overview_rejected">
+								<div id="rejected_defects_column_container"
+									style="height: 220px; text-align: center">
+									<br /> <br /> <br /> <br /> <img
+										src="{% static 'reports/loading29.gif' %}"> <i>&nbsp;&nbsp;Fetching
+										live data from ClearQuest...</i>
+								</div>
+							</div>
+							<div class="tab-pane" id="detail_rejected"
+								style="height: 220px; overflow: auto">
+								<table id="ecm_table_rejected"
+									class="table table-bordered table-striped ">
+									<tbody>
+										<tr>
+											<th class="col-md-2">ECM</th>
+											<th class="col-md-*">Headline</th>
+											<th class="col-md-1">Severity</th>
+											<th class="col-md-1">Owner</th>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" class="col-md-12">
+				<div id="user_column_container" style="width: 100%; height: 250px;"></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#group_by_project" role="tab" data-toggle="tab"><b>Overview</b></a></li>
+  {% for user, user_data in data_group_by_user.items %} 
+  <li><a href="#{{ user.0 }}" role="tab" data-toggle="tab">{{ user.0 }}</a></li>
+  {% endfor %}
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane active" id="group_by_project">
+    {% for project, project_data in data_group_by_project.items %} 
+    <table id="test-{{ year }}-{{ week.week }}" class="table table-bordered table-striped ">
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    <div class="row">
+                        <div class="col-md-10">
+                        </div>
+                    <div class="col-md-*"
+                        style="padding-right: 12px; text-align: right">Total
+                        Efforts:</div>
+                    </div>
+                </td>
+                <td>
+                    <span class="label label-primary">{{ project.2 }} hours</span>
+                </td>
+            </tr>
+        </tfoot>
+    <tbody>
+        <tr style="display:none;">
+            <th class="col-md-2">Project</th>
+            <th class="col-md-1">User</th>
+            <th class="col-md-*">Work Items</th>
+            <th class="col-md-1">Efforts</th>
+        </tr>
+        {% for user, user_data in project_data.items %}
+        {% for workitem in user_data %}
+        <tr>
+            {% if forloop.parentloop.counter == 1 and forloop.counter == 1 %}
+            <td rowspan="{{ project.1 }}"><strong>{{ project.0 }}</strong></td>
+            {% endif %}
+            
+            {% if forloop.counter == 1 %}
+            <td rowspan="{{ user.1 }}">{{ user.0 }}</td>
+            {% endif %}
+            <td>
+                {% if workitem.0 == 10 %}
+                    <span class="label label-primary">{{ workitem.1 }}</span>
+                {% elif workitem.0 == 20 %}
+                    <span class="label label-success">{{ workitem.1 }}</span>
+                {% elif workitem.0 == 50 %}
+                    <span class="label label-warning">{{ workitem.1 }}</span>
+                {% else %}
+                    <span class="label label-info">{{ workitem.1 }}</span>
+                {% endif %}
+                
+                {% autoescape off %}
+                {{ workitem.2 }}
+                {% endautoescape %}
+            
+                {% if workitem.3|length > 0 %}
+                <blockquote>
+                    <p style="width: 800px; word-wrap: break-word; font-size: 100%; ">
+                        <small>
+                        {% autoescape off %}
+                        {{ workitem.3|linebreaksbr }}
+                        {% endautoescape %}
+                        </small>
+                    </p>
+                </blockquote> 
+                {% endif %}
+            </td>
+            <td>{{ workitem.4 }} hrs</td>
+        </tr>
+        {% endfor %}    <!-- End WorkItem -->
+        {% endfor %}    <!-- End Project -->
+    </tbody>
+    </table>
+    <br/>
+    {% endfor %}    <!-- End Project -->
+</div>
+
+{% for user, user_data in data_group_by_user.items %}
+<div class="tab-pane" id="{{ user.0 }}"> 
+    <table id="test-{{ year }}-{{ week.week }}" class="table table-bordered table-striped ">
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    <div class="row">
+                        <div class="col-md-10">
+                        </div>
+                    <div class="col-md-*"
+                        style="padding-right: 12px; text-align: right">Total
+                        Efforts:</div>
+                    </div>
+                </td>
+                <td>
+                {% if user.2 ==  40 %}
+                    <span class="label label-success">{{ user.2 }} hours</span>
+                {% elif user.2 > 40 %}
+                    <span class="label label-danger">{{ user.2 }} hours</span>
+                {% else %}
+                    <span class="label label-warning">{{ user.2 }} hours</span>
+                {% endif %}
+                </td>
+            </tr>
+        </tfoot>
+    <tbody>
+        <tr style="display:none;">
+            <th class="col-md-1">User</th>
+            <th class="col-md-2">Project</th>
+            <th class="col-md-*">Work Items</th>
+            <th class="col-md-1">Efforts</th>
+        </tr>
+        {% for project, project_data in user_data.items %}
+        {% for workitem in project_data %}
+        <tr>
+            {% if forloop.parentloop.counter == 1 and forloop.counter == 1 %}
+            <td rowspan="{{ user.1 }}"><strong>{{ user.0 }}</strong></td>
+            {% endif %}
+            
+            {% if forloop.counter == 1 %}
+            <td rowspan="{{ project.1 }}">{{ project.0 }}</td>
+            {% endif %}
+            <td>
+                {% if workitem.0 == 10 %}
+                    <span class="label label-primary">{{ workitem.1 }}</span>
+                {% elif workitem.0 == 20 %}
+                    <span class="label label-success">{{ workitem.1 }}</span>
+                {% elif workitem.0 == 50 %}
+                    <span class="label label-warning">{{ workitem.1 }}</span>
+                {% else %}
+                    <span class="label label-info">{{ workitem.1 }}</span>
+                {% endif %}
+                
+                {% autoescape off %}
+                {{ workitem.2 }}
+                {% endautoescape %}
+            
+                {% if workitem.3|length > 0 %}
+                <blockquote>
+                    <p style="width: 800px; word-wrap: break-word; font-size: 100%; ">
+                        <small>
+                        {% autoescape off %}
+                        {{ workitem.3|linebreaksbr }}
+                        {% endautoescape %}
+                        </small>
+                    </p>
+                </blockquote> 
+                {% endif %}
+            </td>
+            <td>{{ workitem.4 }} hrs</td>
+        </tr>
+        {% endfor %}    <!-- End WorkItem -->
+        {% endfor %}    <!-- End Project -->
+        
+        <tr>
+            <td colspan="3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="bs-callout bs-callout-success">
+                            <h4>Plan in This Week</h4>
+                            <p>{{ user.3|linebreaksbr }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bs-callout bs-callout-warning">
+                            <h4>Plan for Next Week</h4>
+                            <p>{{ user.4|linebreaksbr }}</p>
+                        </div>                  
+                    </div>
+                </div>
+            </td>
+        </tr>           
+    </tbody>
+    </table>
+    <br/>
+</div>
+{% endfor %}    <!-- End User -->
+
+
+{% endblock %}
+
+{% block page_js %}
+<script>
+    $(document).ready(function() {
+
+        $('#projects_share_container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'QA Efforts Overview'
+            },
+            subtitle: {
+                text: 'Team capacity: {{ users|length }}*40={{ team_capacity }} hrs, actual efforts: {{ total_efforts }} hrs'
+            },
+            tooltip: {
+                pointFormat: '<b>Total: {point.y} hrs</b><br/>{point.users}'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b><br/>{point.percentage:.0f}%  ({point.y} hrs)',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        },
+                        formatter: function() {
+                        	if(this.y != 0) {
+                        	      return this.y;
+                        	}
+                        }
+                    },
+                    showInLegend: false
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Efforts share',
+                data: [
+                {% for project, user_efforts in user_efforts_list.items %}
+                    {% if forloop.counter == 1 %}
+                        {
+                        	name: '{{ project.0 }}',
+                            users: '{% for username in project.2 %} {{ username }}<br/>{% endfor %}',
+                            y: {{ project.1 }},
+                            sliced: true,
+                            selected: true
+                        },
+                    {% else %}
+                        {
+                            name: '{{ project.0 }}',
+                            users: '{% for username in project.2 %} {{ username }}<br/>{% endfor %}',
+                            y: {{ project.1 }},
+                            sliced: false,
+                            selected: false
+                        },
+                    {% endif %}
+                {% endfor %},
+                ]
+            }]
+        });
+        
+        
+        
+        $('#user_column_container').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'QA Efforts Detail'
+            },
+            xAxis: {
+                //categories: ['cliu','hchen','htang','hyan','hzhao','lili','lwang','pchang','qhuang','swu','wqfu','xwang','yjia','yualiu']
+                categories: [ 
+                {% for user in users %}
+                '{{ user }}',
+                {% endfor %} ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'test'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'center',
+                x: 0,
+                verticalAlign: 'top',
+                y: 20,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                formatter: function() {
+                    if (this.series.name=='pie') {
+                        // Pie chart, show point name
+                        return '</b>' + this.point.name +'</b>: '+ this.y +'<br/>';
+                    }
+                    else {
+                        // Column chart, show series name
+                        return '</b>' + this.series.name +'</b>: '+ this.y +'<br/>';
+                    }
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                        style: {
+                            textShadow: '0 0 3px black, 0 0 3px black'
+                        },
+                        formatter:function() {
+                            if(this.y > 0) {
+                            	return this.y;
+                            }
+                        },
+                    }
+                }
+            },
+            series: [
+            {% for project, user_efforts in user_efforts_list.items %}
+                     {
+                name: '{{ project.0 }}',
+                data: {{ user_efforts }}
+            },
+            {% endfor %}
+            ]
+        });
+        
+        
+        
+        var chart_options_verified = {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Defects Resolved: loading...'
+                },
+                subtitle: {
+                    text: '',
+                    floating: true,
+                    align: 'right',
+                    x: 0,
+                    verticalAlign: 'top',
+                    y: 12
+                },          
+                xAxis: {
+                    categories: ['loading']
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    },
+                    stackLabels: {
+                        enabled: true,
+                        style: {
+                            fontWeight: 'bold',
+                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                        }
+                    }
+                },
+                legend: {
+                    align: 'center',
+                    x: 0,
+                    verticalAlign: 'top',
+                    y: 20,
+                    floating: true,
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                    borderColor: '#CCC',
+                    borderWidth: 1,
+                    shadow: false
+                },
+                tooltip: {
+                    formatter: function() {
+                        if (this.series.name=='pie') {
+                            // Pie chart, show point name
+                            return '</b>' + this.point.name +'</b>: '+ this.y +'<br/>';
+                        }
+                        else {
+                            // Column chart, show series name
+                            return '</b>' + this.series.name +'</b>: '+ this.y +'<br/>';
+                        }
+                    }
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal',
+                        dataLabels: {
+                            enabled: true,
+                            color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                            style: {
+                                textShadow: '0 0 3px black, 0 0 3px black'
+                            },
+                            formatter:function() {
+                                if(this.y > 0) {
+                                    return this.y;
+                                }
+                            },
+                        }
+                    }
+                },
+                series: []
+            };
+            var chart_options_submitted = jQuery.extend(true, {}, chart_options_verified);
+            var chart_options_rejected = jQuery.extend(true, {}, chart_options_verified);
+
+
+            // disable the ajax alert
+            window.alert = function() {};
+            ajaxGet('/get_query_data/?query_name=all_verified_defects&year={{ week.year }}&week={{ week.week}}', function(content){
+                //on success
+                chart_options_verified.title.text = "Verified This Week: " + content.rows_count;
+                chart_options_verified.xAxis.categories = content.user_list;
+                
+                for (i = 0; i < content.target_version_serials_list.length; i++) {
+                	chart_options_verified.series.push({
+                        name: content.target_version_serials_list[i]['name'],
+                        data: content.target_version_serials_list[i]['data']
+                    });
+                }
+
+                // Prepare the counter chart data
+                arrTargetVersionCounter = new Array(content.target_version_counter.length);
+                for (i = 0; i < content.target_version_counter.length; i++) {
+                    target_version_name = content.target_version_counter[i][0];
+                    data = {
+                            name: target_version_name,
+                            y: content.target_version_counter[i][1],
+                            // because target version was sorted in Python, so need find the correct color index from target_version_list
+                            color: Highcharts.getOptions().colors[content.target_version_list.indexOf(target_version_name)]
+                    };
+                    arrTargetVersionCounter[i] = data;
+                }
+
+                // Add a new serial to show the counter chart
+                chart_options_verified.series.push({
+                    type: 'pie',
+                    name: 'pie',
+                    startAngle: -90,
+                    endAngle: 90,
+                    innerSize: '40%',
+                    data: arrTargetVersionCounter,
+                    center: [30, '50%'],
+                    size: 90,
+                    showInLegend: false,
+                    dataLabels: {
+                        enabled: true,
+                        distance: -12,
+                        formatter: function() {
+                            return this.y;
+                        },
+                        color:'white',
+                    },
+                });
+                
+                $('#verified_defects_column_container').highcharts(chart_options_verified);
+                
+                for(i=0; i<content.row_list.length; i++){
+                    row = content.row_list[i];
+                    $("#ecm_table_verified tbody").append($("<tr>\n")
+                            .append("<td><a target='_blank' href='https://vottcq1s.canlab.ibm.com/cqweb/restapi/cq_ecm/ECM/RECORD/" + row[0] + "?format=HTML&noframes=true'>" + row[0] + "</a></td>\n")
+                            .append("<td>" + row[1] + "</td>\n")
+                            .append("<td>" + row[2] + "</td>\n")
+                            .append("<td>" + row[3] + "</td>\n")
+                            .append("</tr>"));
+                }
+                
+                resolved_count = content.rows_count;                   
+                ajaxGet('/get_query_items_count/?query_name=all_unverified_defects', function(content){
+                    //on success
+                    var chart = $('#verified_defects_column_container').highcharts();
+                    chart.setTitle(null, {text: "(All unverified defects: " + content.items_count + ")"});
+                });
+            });
+            
+            
+            ajaxGet('/get_query_data/?query_name=all_submitted_defects&year={{ week.year }}&week={{ week.week}}', function(content){
+                //on success
+                chart_options_submitted.title.text = "Submitted This Week: " + content.rows_count;
+                chart_options_submitted.xAxis.categories = content.user_list;
+                
+                for (i = 0; i < content.target_version_serials_list.length; i++) {
+                	chart_options_submitted.series.push({
+                        name: content.target_version_serials_list[i]['name'],
+                        data: content.target_version_serials_list[i]['data']
+                    });
+                }
+
+                // Prepare the counter chart data
+                arrTargetVersionCounter = new Array(content.target_version_counter.length);
+                for (i = 0; i < content.target_version_counter.length; i++) {
+                    target_version_name = content.target_version_counter[i][0];
+                    data = {
+                            name: target_version_name,
+                            y: content.target_version_counter[i][1],
+                            // because target version was sorted in Python, so need find the correct color index from target_version_list
+                            color: Highcharts.getOptions().colors[content.target_version_list.indexOf(target_version_name)]
+                    };
+                    arrTargetVersionCounter[i] = data;
+                }
+
+                // Add a new serial to show the counter chart
+                chart_options_submitted.series.push({
+                    type: 'pie',
+                    name: 'pie',
+                    startAngle: -90,
+                    endAngle: 90,
+                    innerSize: '40%',
+                    data: arrTargetVersionCounter,
+                    center: [30, '50%'],
+                    size: 90,
+                    showInLegend: false,
+                    dataLabels: {
+                        enabled: true,
+                        distance: -12,
+                        formatter: function() {
+                            return this.y;
+                        },
+                        color:'white',
+                    },
+                });
+                
+                $('#submitted_defects_column_container').highcharts(chart_options_submitted);
+                
+                for(i=0; i<content.row_list.length; i++){
+                    row = content.row_list[i];
+                    $("#ecm_table_submitted tbody").append($("<tr>\n")
+                            .append("<td><a target='_blank' href='https://vottcq1s.canlab.ibm.com/cqweb/restapi/cq_ecm/ECM/RECORD/" + row[0] + "?format=HTML&noframes=true'>" + row[0] + "</a></td>\n")
+                            .append("<td>" + row[1] + "</td>\n")
+                            .append("<td>" + row[2] + "</td>\n")
+                            .append("<td>" + row[3] + "</td>\n")
+                            .append("</tr>"));
+                }
+                
+                submitted_count = content.rows_count;                   
+                ajaxGet('/get_query_items_count/?query_name=all_open_defects', function(content){
+                    //on success
+                    var chart = $('#submitted_defects_column_container').highcharts();
+                    chart.setTitle(null, {text: "(All open defects: " + content.items_count + ")"});
+                });
+            });
+            
+            
+            ajaxGet('/get_query_data/?query_name=all_rejected_defects&year={{ week.year }}&week={{ week.week}}', function(content){
+                //on success
+                chart_options_rejected.title.text = "Rejected This Week: " + content.rows_count;
+                chart_options_rejected.xAxis.categories = content.owner_list;
+                
+                for (i = 0; i < content.owner_serials_list.length; i++) {
+                	chart_options_rejected.series.push({
+                        name: content.owner_serials_list[i]['name'],
+                        data: content.owner_serials_list[i]['data']
+                    });
+                }
+                
+                $('#rejected_defects_column_container').highcharts(chart_options_rejected);
+                
+                for(i=0; i<content.row_list.length; i++){
+                    row = content.row_list[i];
+                    $("#ecm_table_rejected tbody").append($("<tr>\n")
+                            .append("<td><a target='_blank' href='https://vottcq1s.canlab.ibm.com/cqweb/restapi/cq_ecm/ECM/RECORD/" + row[0] + "?format=HTML&noframes=true'>" + row[0] + "</a></td>\n")
+                            .append("<td>" + row[1] + "</td>\n")
+                            .append("<td>" + row[2] + "</td>\n")
+                            .append("<td>" + row[4] + "</td>\n")
+                            .append("</tr>"));
+                }
+            });
+    });
+    
+    
+
+</script>
+{% endblock %}

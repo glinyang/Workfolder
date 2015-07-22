@@ -1,0 +1,89 @@
+{% extends "reports/base.html" %}
+
+{% block title %}Interim Fix{% endblock %}
+
+{% block css_interimfix %}class="active"{% endblock %}
+
+{% load staticfiles %}
+
+{% load reports_extras %}
+
+{% block content %}
+
+<h4>
+    Interim Fix<br/><small>APARs</small>
+</h4>
+
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>NO.</th>
+            <th>ECM</th>
+            <th>Headline</th>
+            <th>Target Version</th>
+            <th>Customer</th>
+            <th>Report by</th>
+            <th>DEV Owner</th>
+            <th>QA Owner</th>
+            <th>Status</th>
+            <th>ETA</th>
+            <th>HF No.</th>
+            <th>CQ Note</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>NO.</th>
+            <th>ECM</th>
+            <th>Headline</th>
+            <th>Target Version</th>
+            <th>Customer</th>
+            <th>Report by</th>
+            <th>DEV Owner</th>
+            <th>QA Owner</th>
+            <th>Status</th>
+            <th>ETA</th>
+            <th>HF No.</th>
+            <th>CQ Note</th>
+        </tr>
+    </tfoot>
+    <tbody>
+        {% for showitem in data %}
+        	<tr> 
+ 				<td>{{ showitem.0 }}</td>
+                <td><a href="{% url 'reports:interimfix' %}{{showitem.1}}">{{ showitem.1 }}</a></td>
+                <td>{{ showitem.2 }}</td>
+                <td>{{ showitem.3 }}</td>
+                <td>{{ showitem.4 }}</td>
+                <td>{{ showitem.5 }}</td>
+                <td>{{ showitem.6 }}</td>
+                <td>{{ showitem.7 }}</td>
+                <td>{{ showitem.8 }} </td>
+                <td>{{ showitem.9 }} </td>
+                <td>{{ showitem.10 }} </td>
+                <td>{{ showitem.11 }} </td>         	
+			</tr>	                 
+        {% endfor %}
+    </tbody>
+</table>
+	<div class="add">
+		<a href="{% url 'reports:interimfix_add' %}">New</a>
+	</div>
+		
+{% endblock %}
+
+{% block page_js %}
+<script>
+$(document).ready(function() {
+		$('#table_id').DataTable( {
+			paging: true,			
+            "aLengthMenu": [[10, 25, 50,100, -1], [10, 25, 50,100, "All"]]	                   
+    }); // End document.ready()
+    new $.fn.dataTable.FixedHeader( table );
+} );
+</script>
+
+{% endblock %}
+
+</body>
+</html>

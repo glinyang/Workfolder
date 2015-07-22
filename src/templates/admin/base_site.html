@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+
+{% block title %}DCWatch{% endblock %}
+
+{% load staticfiles %}
+
+{% block extrahead %}
+<link rel="icon" href="{% static 'reports/dc.ico' %}">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">DCWatch</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

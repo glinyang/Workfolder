@@ -1,0 +1,21 @@
+{% extends "reports/base.html" %}
+ 
+{% block title %}Test Page{% endblock %} 
+
+{% block css_test %}class="active"{% endblock %}
+
+{% load reports_extras %} 
+
+{% block content %}
+
+<h1>This is test page</h1>
+
+{% endblock %}
+
+{% block page_js %}
+<script>
+    $(document).ready(function() {
+
+    });
+</script>
+{% endblock %}
