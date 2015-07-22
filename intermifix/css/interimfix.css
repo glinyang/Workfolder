@@ -1,0 +1,86 @@
+.smart-green {
+		margin-left:auto;
+		margin-right:auto;
+		max-width: 1300px;
+		background: #F8F8F8;
+		padding: 30px 30px 20px 30px;
+		font: 16px Arial, Helvetica, sans-serif;
+		color: #666;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+	}
+	.smart-green h1 {
+		font: 30px "Trebuchet MS", Arial, Helvetica, sans-serif;
+		padding: 20px 0px 20px 40px;
+		display: block;
+		margin: -30px -30px 10px -30px;
+		color: #FFF;
+		background: #9DC45F;
+		text-shadow: 1px 1px 1px #949494;
+		border-radius: 5px 5px 0px 0px;
+		-webkit-border-radius: 5px 5px 0px 0px;
+		-moz-border-radius: 5px 5px 0px 0px;
+		border-bottom:1px solid #89AF4C;
+
+	}
+	.smart-green textarea{
+	    color: #555;
+		height: 30px;
+		line-height:15px;
+		width: 100%;
+		padding: 0px 0px 0px 10px;
+		margin-top: 2px;
+		border: 1px solid #E5E5E5;
+		background: #FBFBFB;
+		outline: 0;
+		-webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+		box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+		font: normal 14px/14px Arial, Helvetica, sans-serif;
+		height:100px;
+		padding-top: 10px;
+	}
+.smart-green  input[type="text"],.smart-green select {
+		color: #555;
+		height: 30px;
+		line-height:15px;
+		width: 20%;
+		padding: 0px 0px 0px 10px;
+		margin-top: 2px;
+		border: 1px solid #E5E5E5;
+		background: #FBFBFB;
+		outline: 0;
+		-webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+		box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+		font: normal 14px/14px Arial, Helvetica, sans-serif;
+	}
+
+.smart-green input[type="submit"]{
+		background-color: #9DC45F;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-border-radius: 5px;
+		border: none;
+		padding: 10px 25px 10px 25px;
+		color: #FFF;
+		text-shadow: 1px 1px 1px #949494;
+}
+.smart-green input[type="submit"]:hover{
+		background-color:#80A24A;
+}
+.smart-green alert alert-error{
+	color:red;
+}
+
+
+.add a{
+	    font: 15px Arial, Helvetica, sans-serif;
+		background-color: #9DC45F;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-border-radius: 5px;
+		border: none;
+		padding: 10px 15px 10px 15px;
+		color: #FFF;
+		text-shadow: 1px 1px 1px #949494;
+}
