@@ -1,0 +1,127 @@
+/*Modals*/
+#about-postman-social-buttons {
+    margin: 5px 0 5px 0;
+}
+
+#about-postman-twitter-button,
+#about-postman-plus-one-button,
+#about-postman-facebook-button {
+    float: left;
+    margin-right: 10px;
+}
+
+#modal-import-collection h4 {
+    margin-bottom: 10px;
+}
+
+#import-collection-url-input {
+    width: 90%;
+}
+
+#modal-environments .modal-footer {
+    display: none;
+}
+
+#modal-spread-the-word a {
+    font-weight: bold;
+}
+
+#modal-header-presets .modal-footer {
+    display: none;
+}
+
+#modal-header-presets {
+  width: 760px;
+  margin-left: -380px;
+
+  input.keyvalueeditor-key {
+      width: 250px;
+  }
+
+  input.keyvalueeditor-value {
+      width: 300px;
+  }
+}
+
+#modal-tcp-manager {
+	.status-connected {
+		color: green;
+	}
+
+	.status-disconnected {
+		color: red;
+	}
+}
+
+#modal-importer {
+    width: 760px;
+    margin-left: -380px;
+    //top: 35%;
+    //height: 550px;
+
+    .container {
+        width: 100%;
+    }
+
+    #importBar {
+      display: none;
+    }
+
+    #import-collection-dropzone {
+      border: 2px dashed $medium_light_gray;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      padding: 25px;
+      text-align: center;
+      height: 150px;
+    }
+
+    #importRawText {
+      width: 98%;
+    }
+
+    #importLink {
+      width: 98%;
+    }
+
+    .btn-primary {
+      float: right;
+    }
+
+    #import-collection-dropzone h3 {
+      color: #BBB;
+      font: 20pt bold $font;      
+      margin-top: 35px
+    }
+
+    #collection-files-input {
+      margin-left: 90px;
+    }
+}
+#modal-overwrite-collection {
+    #modal-overwrite-collection-overwrite {
+        float: left;
+    }
+
+    #modal-overwrite-collection-newname {
+        width: 135px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+    }
+}
+
+#modal-data-preview {
+    margin-left: -370px;
+    width: 740px;
+
+    .modal-body {
+      -webkit-transform: translate3d(0, 0, 0); // workaround to address redraw issue #gh/a85:705
+      overflow: scroll;
+    }
+}
+
+.modal-aceeditor-container {
+  height: 300px;
+  position: relative;
+}

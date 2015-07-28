@@ -1,0 +1,43 @@
+.sidebar-test-run {
+    border-radius: 3px;
+}
+
+.sidebar-test-run .test-run {
+    padding: 8px;
+}
+
+.sidebar-test-run:hover {
+    background-color: $base_sidebar_hover_color;
+    cursor: pointer;
+}
+
+.sidebar-test-run a,
+.sidebar-test-run a:hover {
+    color: $base_text_color;
+    text-decoration: none;
+}
+
+#test-run-items .test-run-actions {
+    margin-left: 267px;
+}
+
+.test-run-actions {
+    background: $base_sidebar_hover_color;
+    display: none;
+    opacity: 1;
+    padding: 5px 0 5px 20px !important;
+    position: absolute;
+    margin-left: 300px;
+
+    span {
+        opacity: 0.5;        
+    }
+
+    span:hover {
+        opacity: 1;
+    }
+}
+
+#test-run-options {
+    margin-left: 295px;
+}

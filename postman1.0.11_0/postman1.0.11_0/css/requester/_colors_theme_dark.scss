@@ -1,0 +1,38 @@
+$theme_background_color: $monokai_background_color;
+$theme_background_lighter_color: $really_dark_gray;
+$theme_background_border_color: $dark_gray;
+$theme_background_border_hover_color: $really_dark_gray;
+$theme_shadow_color: $really_dark_gray;
+$theme_light_heading_color: $light_gray;
+$theme_text_color: $monokai_text_color;
+$theme_text_hover_color: $really_light_gray;
+$theme_inactive_text_color: $dark_gray;
+$theme_text_link_color: $light_link_blue;
+
+$theme_secondary_background_color: $really_light_gray;
+$theme_secondary_text_color: $almost_black;
+
+/*Final variables*/
+$current_theme: dark;
+
+$base_background_color: $theme_background_color;
+$base_background_lighter_color: $theme_background_lighter_color;
+$base_background_border_color: $theme_background_border_color;
+$base_background_border_hover_color: $theme_background_border_hover_color;
+$base_shadow_color: $theme_shadow_color;
+$base_light_heading_color: $theme_light_heading_color;
+$base_text_color: $theme_text_color;
+$base_text_hover_color: $theme_text_hover_color;
+$base_inactive_text_color: $theme_inactive_text_color;
+$base_text_link_color: $theme_text_link_color;
+
+$base_secondary_background_color: $theme_secondary_background_color;
+$base_secondary_text_color: $theme_secondary_text_color;
+
+$base_sidebar_background_color: $sidebar_dark_base;
+$base_sidebar_hover_color: $really_dark_gray;
+$base_sidebar_active_color: $dark_gray;
+$dropdown_text_color: #B8BCBF;
+
+$resize_handle_img: "../custom-theme/images/ui-icons_ffffff_256x240.png";
+$env-name-error: rgb(240, 142, 142);

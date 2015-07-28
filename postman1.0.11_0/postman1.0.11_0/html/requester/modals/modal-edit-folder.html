@@ -1,0 +1,40 @@
+<div id="modal-edit-folder" class="modal hide fade" tabindex="-1">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Edit folder</h3>
+    </div>
+    <div class="modal-body">
+        <div id="edit-folder-details">
+            <form class="form form-inline" id="form-edit-folder">
+                <input type="hidden" name="folder-id" class="folder-id"/>
+
+                <div class="control-group">
+                    <label class="control-label">Name</label>
+                    <div class="controls">
+                        <input type="text" name="edit-folder-name" id="edit-folder-name" class="medium clean-input folder-name"/>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="edit-folder-description">Description</label>
+
+                    <div class="controls">
+                        <div class="input">
+                            <div class="modal-aceeditor-container">
+                                <div class="aceeditor-div" id="edit-folder-description"></div>
+                            </div>
+
+                            <p class="help-block">
+                                Folder descriptions support Markdown.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a class="btn btn-primary">Edit</a>
+        <a data-dismiss="modal" class="btn btn-secondary">Cancel</a>
+    </div>
+</div>

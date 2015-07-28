@@ -1,0 +1,19 @@
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
+    color: #F4F4F4 !important;
+    cursor: default;
+    background-color: transparent !important;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+}
+
+.nav li.active>a, .nav li.active>a:hover {
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+}
+
+.nav-pills>.active>a, .nav-pills>.active>a:hover, .nav-pills>.active>a:focus {
+    color: #fff !important;
+    background-color: transparent !important;
+    border: 0 !important;
+}

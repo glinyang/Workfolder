@@ -1,0 +1,19 @@
+<div id="modal-overwrite-collection" class="modal hide fade" tabindex="-1">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Collection ID exists</h3>
+    </div>
+    <div class="modal-body">
+        <div id="overwrite-collection-details">
+            <form class="form" id="form-overwrite-collection">
+                <p>A collection "<span id="existingCollectionName"></span>" already exists in Postman with the same identifier.</p>
+                <p>What would you like do?</p>
+            </form>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <a data-dismiss="modal" class="btn btn-primary" id="modal-overwrite-collection-overwrite">Overwrite existing collection</a>
+        <a data-dismiss="modal" class="btn btn-secondary" id="modal-overwrite-collection-duplicate">Import as new collection</a>
+    </div>
+</div>

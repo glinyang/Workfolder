@@ -1,0 +1,265 @@
+<div id="modal-settings" class="modal fade">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+
+        <h3>Settings</h3>
+    </div>
+    <div class="modal-body">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#settings-settings" data-toggle="tab">Settings</a></li>
+            <li><a href="#settings-theme" data-toggle="tab">Theme</a></li>
+            <li><a href="#settings-shortcuts" data-toggle="tab">Shortcuts</a></li>
+            <li><a href="#settings-data" data-toggle="tab">Data</a></li>
+            <li><a href="#settings-add-ons" data-toggle="tab">Add-ons</a></li>
+            <li><a href="#settings-about" data-toggle="tab">About</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="settings-settings">
+                <form class="form-horizontal">                
+                    <div class="control-group">
+                        <label class="control-label" for="trim-keys-and-values">Trim keys and values in request body</label>
+
+                        <div class="controls">
+                            <select class="medium" name="trim-keys-and-values" id="trim-keys-and-values">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="retain-link-headers">Retain headers on clicking on links</label>
+
+                        <div class="controls">
+                            <select class="medium" name="retain-link-headers" id="retain-link-headers">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="send-no-cache-header">Send no-cache header</label>
+
+                        <div class="controls">
+                            <select class="medium" name="send-no-cache-header" id="send-no-cache-header">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="send-postman-token-header">Send postman-token header</label>
+
+                        <div class="controls">
+                            <select class="medium" name="send-postman-token-header" id="send-postman-token-header">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="language-detection">Language detection</label>
+
+                        <div class="controls">
+                            <select class="medium" name="language-detection" id="language-detection">
+                                <option value="auto">Automatic detection</option>
+                                <option value="javascript">Force JSON</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="response-font-size">Response Font Size (px)</label>
+
+                        <div class="controls">
+                            <input type="text" name="response-font-size" id="response-font-size" class="clean-input"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="xhr-timeout">XHR Timeout (ms)</label>
+
+                        <div class="controls">
+                            <input type="text" name="xhr-timeout" id="xhr-timeout" class="clean-input"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="variable-delimiter">Variable delimiter</label>
+
+                        <div class="controls">
+                            <input type="text" name="variable-delimiter" id="variable-delimiter" class="clean-input"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="have-donated">Force Windows line endings?</label>
+
+                        <div class="controls">
+                            <select class="medium" name="force-windows-line-endings" id="force-windows-line-endings">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="instant-modals">Instant dialog boxes</label>
+
+                        <div class="controls">
+                            <select class="medium" name="instant-modals" id="instant-modals">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="auto-follow-interceptor-redirects">Automatically follow redirects</label>
+
+                        <div class="controls">
+                            <select class="medium" name="auto-follow-interceptor-redirects" id="auto-follow-interceptor-redirects">
+                                <option value="true">Yes</option>
+                                <option value="false">No (Interceptor must be enabled for this - v0.2.9 or later)</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane" id="settings-theme">
+                <div id="settings-theme-form">
+                    <p>Choose one of the options below to select your theme.</p>
+
+                    <div class="theme-chooser clearfix">
+                        <div class="theme-option-light theme-option">
+                            <a><img src="img/light-theme-thumb.png" data-theme="light" class="theme-thumbnail selected-theme-thumb"></a>
+                        </div>
+                        <div class="theme-option-dark">
+                            <a><img src="img/dark-theme-thumb.png" data-theme="dark" class="theme-thumbnail"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="settings-theme-buy-message">
+                    <h3>Theme settings are not available</h3>
+                    
+                    <p>You need to purchase the Jetpacks upgrade to activate the "Vader" theme.</p>
+
+                    <p>
+                        <a class="btn btn-medium btn-success buy-jetpacks">Buy ($9.99)</a>
+                        <a class="btn btn-medium" target="_blank"
+                            href="https://www.getpostman.com/docs/jetpacks_intro">Know more</a>
+                    </p>
+                </div>
+            </div>
+            <div class="tab-pane" id="settings-shortcuts">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Shortcut key</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>New request</td>
+                        <td><strong>Alt + n</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Save request</td>
+                        <td><strong>Alt + s</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Preview request</td>
+                        <td><strong>Alt + p</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Edit URL</td>
+                        <td><strong>Backspace</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Edit headers</td>
+                        <td><strong>h</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Send request</td>
+                        <td><strong>Enter/Return</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Maximize/minimize response</td>
+                        <td><strong>f</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Add request to collection</td>
+                        <td><strong>a</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Clear history</td>
+                        <td><strong>Alt + c</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Manage environments</td>
+                        <td><strong>e</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Toggle Quicklook window</td>
+                        <td><strong>q</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Find text in response</td>
+                        <td><strong>Cmd+F/Ctrl+F</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Find next occurence in response</td>
+                        <td><strong>Cmd+G/Ctrl+G</strong></td>
+                    </tr>
+                    <tr>
+                        <td>This window</td>
+                        <td><strong>?</strong></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab-pane" id="settings-data">
+                <div>
+                    <h4>Export data</h4>
+                    <p>Export all your collections, environments, globals, and header presets to a single dump file.</p>
+                    <a id="download-all-data" class="btn">Download</a>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <h4>Import data</h4>
+                    <p>Import a Postman data dump. This may overwrite existing data.</p>
+
+                    <div class="control-group">
+                        <input type="file" id="import-all-data-files-input" name="files"/>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="settings-add-ons">
+                <div class="add-on">
+                    <a target="_blank" href="https://github.com/a85/POSTMan-Chrome-Extension/wiki/Postman-Proxy">Postman Proxy</a>
+                    <p>Postman Proxy allows you to bypass Chrome’s XMLHttpRequest restrictions. You can send headers not allowed by Chrome as well as receive and inspect responses which have a Location header set. For setting up the proxy you would require Python and Twisted.</p>
+                </div>
+            </div>
+            <div class="tab-pane" id="settings-about">
+                <div class="debug-info">
+                    <div class="postman-version"></div>
+                    <div class="postman-os-info"></div>
+                </div>
+
+                <div class="postman-links">
+                    <ul>
+                        <li><a href="https://www.getpostman.com/dependencies" target="_blank">Licenses</a></li>
+                        <li><a href="https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop/reviews" target="_blank">Like Postman? Write a review!</a></li>
+                        <li><a href="https://www.getpostman.com/changelog" target="_blank">Changelog</a></li>
+                        <li><a href="https://www.getpostman.com" target="_blank">Postman homepage</a></li>
+                        <li><a href="https://www.getpostman.com/docs" target="_blank">Documentation</a></li>
+                        <li><a href="https://github.com/a85/POSTMan-Chrome-Extension/issues" target="_blank">Report an issue</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

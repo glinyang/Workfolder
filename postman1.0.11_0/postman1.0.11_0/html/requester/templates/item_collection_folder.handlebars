@@ -1,0 +1,35 @@
+    <li id="folder-{{id}}" class="folder clearfix" data-id="{{id}}">
+        <div class="folder-head">
+            <div class="folder-head-actions">
+                <a
+                   data-placement="bottom"
+                   rel="tooltip" data-original-title="Edit folder"
+                   ref="#modal-edit-folder" data-toggle="modal"
+                   class="folder-actions-edit" data-id="{{id}}" data-name="{{name}}">
+                    <span class="icon-collection-edit"></span></a>
+                <a rel="tooltip" data-original-title="Duplicate folder" data-placement="bottom"
+                   data-name="{{name}}" data-id="{{id}}" class="folder-actions-duplicate">
+                    <span class="icon-collection-copy"></span></a>
+                </a>
+                <a rel="tooltip" data-original-title="Delete folder"
+                   data-name="{{name}}"
+                   data-placement="bottom"
+                   href="#modal-delete-folder" data-toggle="modal"
+                   class="folder-actions-delete" data-id="{{id}}">
+                    <span class="icon-collection-delete"></span></a>
+            </div>
+            <div class="folder-head-name" data-id="{{id}}">
+                <span class="folder-head-dt">
+                    <span class="icon-dt"></span>
+                </span>
+                <span class="name">
+                  {{name}}
+                </span>
+            </div>
+        </div>
+        <ul id="folder-requests-{{id}}" class="folder-requests" data-id="{{id}}">
+            {{#each requests}}
+                {{> item_collection_sidebar_request}}
+            {{/each}}
+        </ul>
+    </li>

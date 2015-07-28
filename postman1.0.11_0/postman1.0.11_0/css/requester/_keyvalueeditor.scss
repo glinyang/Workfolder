@@ -1,0 +1,83 @@
+.keyvalueeditor-inputs {
+    float: left;
+}
+
+input.keyvalueeditor-key,
+input.keyvalueeditor-value
+{
+    background-color: $theme_background_color;
+    color: $base_text_color;
+    padding: 5px;
+    border: none;
+    box-shadow: none;
+    border-bottom: solid thin $base_background_border_color;
+    border-radius: 0;
+    outline: none;
+    margin-right: 10px;
+    width: 220px;
+}
+
+input.keyvalueeditor-value-file {
+    margin-right: 10px;
+    border-bottom: 0;
+}
+input.keyvalueeditor-key:focus,
+input.keyvalueeditor-value:focus {
+    border-color: $theme_background_border_hover_color;
+    outline: 0;
+    outline-width: 0;
+}
+
+select.keyvalueeditor-valueTypeSelector {
+    width: 100px;
+    margin-right: 10px;
+}
+
+input.keyvalueeditor-key[data-editable=false] {
+    background: white;
+}
+
+.keyvalueeditor-action-wrapper {
+    float: left;
+    margin-top: 4px;  
+}
+
+.keyvalueeditor-toggle {
+    margin-top: 4px;
+    float: left;
+}
+
+.keyvalueeditor-row span.dragger {    
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;    
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    cursor: grab;
+}
+
+.keyvalueeditor-textarea {
+    width: 523px;
+    resize: vertical;
+}
+
+.keyvalueeditor-rowcontrol {
+    visibility: hidden;
+}
+
+.keyvalueeditor-delete {
+    opacity: 0.8;
+    margin-top: -15px;
+}
+
+.keyvalueeditor-delete > img {
+    width: 20px;
+    height: 20px;
+}
+
+.keyvalueeditor-toggle > img {
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+}

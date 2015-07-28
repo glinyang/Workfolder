@@ -1,0 +1,17 @@
+<div class="test-run-stats-viewer-header clearfix">
+    <div class="left">
+        <div>
+            <span class="test-run-collection-name">{{collection.name}}</span>{{#if folder}}<span class="test-run-folder-name">/{{folder.name}}</span>{{/if}}
+        </div>
+        {{#if environment}}
+        <div class="test-run-environment-name">
+            <strong>Environment</strong> {{environment.name}}
+        </div>
+        {{/if}}
+    </div>
+    <div class="right">
+        <div class="test-run-time" title="{{formatTime timestamp}}">
+        {{formatTime timestamp}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div id="test-run-stats-overview-{{id}}" class="test-run-stats-overview">
+	{{#if showTime }}
+		<div class="test-run-stats-timestamp" title="{{formatTime timestamp}}">
+		{{formatTime timestamp}}
+		</div>
+	{{/if}}
+	<div class="test-run-stats-pass-percentage">
+		<div class="test-run-stats-pass-success">
+		</div>
+	</div>
+	<div class="results-container clearfix">
+		<div class="left">
+			<span class="pass-count">{{ count.passed }}</span> passed, 
+			<span class="fail-count">{{ count.failed }}</span> failed
+		</div>
+		<div class="right">
+			{{ averageResponseTime }}ms
+		</div>
+	</div>	
+</div>

@@ -1,0 +1,38 @@
+$theme_background_color: $white;
+$theme_background_lighter_color: $light_gray;
+$theme_background_border_color: $medium_light_gray;
+$theme_background_border_hover_color: $light_gray;
+$theme_shadow_color: $light_gray;
+$theme_light_heading_color: $light_gray;
+$theme_text_color: $almost_black;
+$theme_text_hover_color: $black;
+$theme_inactive_text_color: $medium_light_gray;
+$theme_text_link_color: $link_blue;
+
+$theme_secondary_background_color: $really_light_gray;
+$theme_secondary_text_color: $almost_black;
+
+/*Final variables*/
+$current_theme: light;
+
+$base_background_color: $theme_background_color;
+$base_background_lighter_color: $theme_background_lighter_color;
+$base_background_border_color: $theme_background_border_color;
+$base_background_border_hover_color: $theme_background_border_hover_color;
+$base_shadow_color: $theme_shadow_color;
+$base_light_heading_color: $theme_light_heading_color;
+$base_text_color: $theme_text_color;
+$base_text_hover_color: $theme_text_hover_color;
+$base_inactive_text_color: $theme_inactive_text_color;
+$base_text_link_color: $theme_text_link_color;
+
+$base_secondary_background_color: $theme_secondary_background_color;
+$base_secondary_text_color: $theme_secondary_text_color;
+
+$base_sidebar_background_color: $sidebar_light_base;
+$base_sidebar_hover_color: $medium_light_gray;
+$base_sidebar_active_color: $light_blue;
+$dropdown_text_color: #333;
+
+$resize_handle_img: "../custom-theme/images/ui-icons_222222_256x240.png";
+$env-name-error: red;

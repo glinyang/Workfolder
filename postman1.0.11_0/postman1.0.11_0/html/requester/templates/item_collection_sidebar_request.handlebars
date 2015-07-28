@@ -1,0 +1,24 @@
+
+    <li id="sidebar-request-{{id}}" class="sidebar-collection-request sidebar-request clearfix">
+        <div class="request-actions">
+            <a data-id="{{id}}" class="request-actions-edit" data-placement="bottom"
+               rel="tooltip" data-original-title="Edit request">
+                <span class="icon-collection-edit"></span>
+            </a>
+            <a  data-id="{{id}}" class="request-actions-duplicate" data-placement="bottom"
+                rel="tooltip" data-original-title="Duplicate request">
+                <span class="icon-collection-copy"></span>
+            </a>
+            <a  data-id="{{id}}" class="request-actions-delete"  data-placement="bottom"
+                rel="tooltip" data-original-title="Delete request">
+                <span class="icon-collection-delete"></span>
+            </a>
+        </div>
+        <div class="request request-actions-load" data-id="{{id}}">
+            <a ><span class="label label-method-{{method}}">{{method}}</span>
+                <span class="request-name">
+                {{{name}}}
+                </span>
+            </a>
+        </div>
+    </li>

@@ -1,0 +1,35 @@
+<div id="test-run-request-result-{{id}}" class="test-run-request-result" data-id="{{id}}">
+    <div class="meta clearfix">
+        <div class="left">
+            <div class="name">
+                {{name}}
+            </div>
+            <div class="url">
+                {{{limitLineWidth url 60}}}
+            </div>
+        </div>
+        <div class="right">
+            <div class="status-code">
+                <span class="code">{{responseCode.code}}</span>
+                <span class="name">{{responseCode.name}}</span>
+            </div>
+            <div class="time">
+                {{time}}ms
+            </div>
+        </div>
+    </div>
+    <div class="tests clearfix" data-result-id="{{id}}" data-test-run-id="{{testRunId}}">
+        <div class="tests-wrapper">
+        {{#each testsArray}}
+            <div class="test" data-result-id="{{id}}">
+                <span class="label label-test-result-{{value}}">{{value}}</span> {{key}} -
+                <span class="pass-count">{{passCount}}</span> |
+                <span class="fail-count">{{failCount}}</span>
+            </div>
+        {{/each}}
+        </div>
+        <div class="test-view-more" data-result-id="{{id}}" data-test-run-id="{{testRunId}}">
+            <img src="img/test-detail.png"/>
+        </div>
+    </div>
+</div>

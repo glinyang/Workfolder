@@ -1,0 +1,128 @@
+#modal-test-purchaser {
+	.modal-header {
+		background: $really_dark_gray;
+		.close {
+			color: white;
+		}
+
+		h3 {
+			color: white;
+			font-weight: normal;
+			font-size: 14px;
+		}
+	}
+
+	.modal-body {
+		padding: 0;
+	}
+
+	.preloader {
+		display: none;
+		width: 24px;
+		height: 24px;
+		margin-left: 10px;
+	}
+}
+
+#test-purchaser-webview {
+	width: 940px;
+	height: 500px;
+}
+
+@media (min-width: 1200px) {
+	#test-purchaser-webview {
+		width: 1170px;	
+	}	
+}
+
+.purchase-message {
+	color: $light_gray;
+	font-size: 16px;
+
+	.small-message {
+		font-size: 13px;
+	}
+}
+
+.btn-upgrade-cancel {
+	float: left;
+}
+
+.buy-header {
+	height: 65px;
+	padding-right: 20px;
+
+	h3 {
+		float: left;
+		margin-top: 0;
+	}
+
+	.btn-primary {
+		float: right;
+	}	
+}
+
+#modal-jetpacks-about {
+	.modal-header {
+		height: 50px;
+
+		h3 {
+			float: left;
+			margin-top: 10px;
+		}
+
+		.btn-primary {
+			float: right;
+		}
+	}	
+}
+
+.request-tests-purchase-message {
+	border: solid thin $really_light_gray;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+.iap-content-features {
+	.header-description {
+		font-size: 14px;
+	}
+}
+
+.iap-content-feature {
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.iap-content-feature-image {
+	float: left;
+}
+
+.iap-content-feature-meta {
+	float: left;
+	width: 234px;
+}
+
+.iap-content-feature-image img {
+	width: 270px;
+	text-align: center;
+}
+
+.iap-content-feature-header {
+	color: $base_text_color;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: left;
+	margin-left: 20px;
+}
+
+.iap-content-feature-description {
+	font-size: 12px;
+	color: $base_light_heading_color;
+	width: 200px;
+	margin-top: 10px;
+	margin-left: 20px;
+	text-align: left;
+}

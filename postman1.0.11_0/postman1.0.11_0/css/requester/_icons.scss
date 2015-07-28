@@ -1,0 +1,255 @@
+/*Conditional stuff*/
+@mixin icon_defaults($width, $y) {
+	display: inline-block;
+	width: $width;
+	height: $width;
+	vertical-align: text-top;	
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 0 $y;
+}
+
+.icon-new-window {
+	@include icon_defaults(20px, 0px);
+	/*Conditionals dark*/
+	background-image: url("../../img/new_window.png");
+}
+
+.icon-small {
+	width: 14px !important;
+	height: 14px !important;
+}
+
+@if $current_theme == 'dark' {
+	.icon-eye {
+		@include icon_defaults(20px, -5px);
+		/*Conditionals dark*/
+		background-image: url("../../img/light/eye.png");
+	}
+
+	.icon-circle-minus {
+		@include icon_defaults(14px, 0);
+		background-image: url("../../img/light/circle_minus.png");
+	}
+
+	.icon-circle-plus {
+		@include icon_defaults(14px, 0);
+		background-image: url("../../img/light/circle_plus.png");
+	}
+
+	.icon-bulk-edit {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/light/icon_bulk_edit.png");
+	}
+
+	.icon-move {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/light/move.png");
+	}
+
+	.icon-copy {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/light/copy.png");
+	}
+
+	.icon-download {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/light/download.png");
+	}
+
+	.icon-delete {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/light/delete.png");
+	}
+
+	.icon-size-toggle-maximize {
+		@include icon_defaults(16px, 0px);
+		background-image: url("../../img/light/maximize.png");
+	}
+
+	.icon-size-toggle-minimize {
+		@include icon_defaults(16px, 0px);
+		background-image: url("../../img/light/minimize.png");
+	}
+
+	.icon-right-indent {
+		@include icon_defaults(16px, 0px);
+		background-image: url("../../img/light/right_indent.png");
+	}
+
+	.icon-search {
+		@include icon_defaults(16px, 0px);
+		background-image: url("../../img/light/search.png");
+	}
+
+	.icon-trash-empty {
+		@include icon_defaults(20px, 0px);
+		background-image: url("../../img/light/trash-empty.png");
+	}
+
+	.icon-new-collection {
+		@include icon_defaults(20px, 0px);
+		background-image: url("../../img/light/folder_plus.png");	
+	}
+
+	.icon-import-collection {
+		@include icon_defaults(20px, 0px);
+		background-image: url("../../img/light/inbox_in.png");	
+	}
+
+	.icon-search-delete {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/delete.png");
+	}
+
+	.icon-dt {
+		@include icon_defaults(10px, 0);
+		background-image: url("../../img/light/dt.png");
+	}
+
+	.icon-collection-new-folder {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/light/folder_plus.png");		
+	}
+
+	.icon-collection-edit {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/light/edit.png");		
+	}
+
+	.icon-collection-copy {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/light/copy.png");		
+	}
+
+	.icon-collection-share {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/light/share.png");		
+	}
+
+	.icon-collection-delete {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/light/delete.png");
+	}
+
+	.icon-preloader {
+		@include icon_defaults(32px, 0);
+		background-image: url("../../img/preloader-dark.gif");
+	}
+} @else {
+	.icon-eye {
+		@include icon_defaults(20px, -5px);
+		/*Conditionals dark*/
+		background-image: url("../../img/eye.png");
+	}
+
+	.icon-circle-minus {
+		@include icon_defaults(14px, 0);
+		background-image: url("../../img/circle_minus.png");
+	}
+
+	.icon-circle-plus {
+		@include icon_defaults(14px, 0);
+		background-image: url("../../img/circle_plus.png");
+	}
+
+	.icon-bulk-edit {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/icon_bulk_edit.png");
+	}
+
+	.icon-move {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/move.png");
+	}
+
+	.icon-copy {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/copy.png");
+	}
+
+	.icon-download {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/download.png");
+	}
+
+	.icon-delete {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/delete.png");
+	}
+
+	.icon-size-toggle-maximize {
+		@include icon_defaults(16px, 0px);
+		background-image: url("../../img/maximize.png");
+	}
+
+	.icon-size-toggle-minimize {
+		@include icon_defaults(16px, 0px);
+		background-image: url("../../img/minimize.png");
+	}
+
+	.icon-right-indent {
+		@include icon_defaults(16px, 0px);
+		background-image: url("../../img/right_indent.png");
+	}
+
+	.icon-search {
+		@include icon_defaults(16px, 0px);
+		background-image: url("../../img/search.png");
+	}
+
+	.icon-trash-empty {
+		@include icon_defaults(20px, 0px);
+		background-image: url("../../img/trash-empty.png");
+	}
+
+	.icon-new-collection {
+		@include icon_defaults(20px, 0px);
+		background-image: url("../../img/folder_plus.png");	
+	}
+
+	.icon-import-collection {
+		@include icon_defaults(20px, 0px);
+		background-image: url("../../img/inbox_in.png");	
+	}
+
+	.icon-search-delete {
+		@include icon_defaults(20px, 0);
+		background-image: url("../../img/delete.png");
+	}
+
+	.icon-dt {
+		@include icon_defaults(10px, 0);
+		background-image: url("../../img/dt.png");
+	}
+
+	.icon-collection-new-folder {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/folder_plus.png");		
+	}
+
+	.icon-collection-edit {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/edit.png");		
+	}
+
+	.icon-collection-copy {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/copy.png");		
+	}
+
+	.icon-collection-share {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/share.png");		
+	}
+
+	.icon-collection-delete {
+		@include icon_defaults(18px, 0);
+		background-image: url("../../img/delete.png");		
+	}
+
+	.icon-preloader {
+		@include icon_defaults(32px, 0);
+		background-image: url("../../img/preloader-white.gif");
+	}
+}

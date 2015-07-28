@@ -1,0 +1,19 @@
+<div class="test-run-progress-content">
+    <div>
+        <span class="test-run-collection-name">{{collection.name}}</span>{{#if folder}}<span class="test-run-folder-name">/{{folder.name}}</span>{{/if}}
+    </div>
+
+    {{#if environment}}
+    <div class="test-run-environment-name">
+        <strong>Environment</strong> {{environment.name}}
+    </div>
+    {{/if}}
+
+    <div class="test-run-time">
+    {{formatTime timestamp}}
+    </div>
+
+    <div id="test-run-progress-content-loader" class="loader">
+        <span class="icon-preloader"></span>
+    </div>
+</div>

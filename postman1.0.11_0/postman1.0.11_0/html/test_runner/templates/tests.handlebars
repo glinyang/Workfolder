@@ -1,0 +1,7 @@
+{{#each testsArray}}
+    <div class="test" data-result-id="{{id}}">
+        <span class="label label-test-result-{{value}}">{{value}}</span> {{key}} -
+        Passed: <span class="pass-count">{{passCount}}</span>, 
+        Failed: <span class="fail-count">{{failCount}}</span>
+    </div>
+{{/each}}
