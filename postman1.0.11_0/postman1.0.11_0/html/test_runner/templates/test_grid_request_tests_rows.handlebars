@@ -1,0 +1,14 @@
+{{#each tests}}
+<tr data-result="{{result}}">
+	<td>{{@index}}</td>	
+	  {{#each this.tests}}
+		<td>
+	  	{{#if this.value}}
+	    	<img src="img/dot-green.png"/>
+    	{{else}}
+    		<img src="img/dot-red.png"/>
+	    {{/if}}
+    	</td>
+	  {{/each}}		
+</tr>
+{{/each}}

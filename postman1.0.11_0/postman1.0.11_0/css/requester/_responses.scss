@@ -1,0 +1,384 @@
+/*Response*/
+#response-data-container {
+    background-color: $base_background_color;
+}
+
+#response-sample-status {
+    display: none;
+}
+
+#response-editors {
+    margin-top: -5px;
+    margin-left: -10px;
+    background: $base_background_color;
+    min-height: 200px;
+    padding-left: 10px;
+
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+#html-aceeditor {
+    position: absolute; top:0;left:0;right:0;bottom:0;
+}
+
+.html-source-pane {
+    width: 95%;
+    height: 600px;
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0); // workaround to address redraw issue #gh/a85:705
+    overflow: scroll;
+    border: 1px solid rgb(90, 100, 111);
+}
+
+.ace-editor-link {
+    color: blue;
+}
+
+#response-as-code>.CodeMirror {
+  overflow-y: auto !important;
+}
+
+#response-editors:focus {
+    border: none;
+    outline: none;
+}
+
+#response-headers-container,
+#response-cookies-container,
+#response-tests-container {
+    margin-top: 20px;
+    max-width: 1000px;
+    font-size: 11px;
+    display: none;
+}
+
+#response-cookies-not-found-message {
+    display: none;
+
+    p {
+        font-size: 14px;
+    }
+}
+
+#response-cookies {
+    max-width: 1000px;
+    -webkit-transform: translate3d(0, 0, 0); // workaround to address redraw issue #gh/a85:705
+    overflow: scroll;
+
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+#response-data {
+    max-height: 1000px;
+    background-color: $base_background_color;
+
+    pre {
+        font-family: Consolas, "Andale Mono", monospace;
+    }
+}
+
+.response-header {
+    font-family: $font;
+    list-style: none;
+    margin-bottom: 5px;
+    color: $base_text_color;
+
+    .response-header-name {
+        font-weight: bold;
+        color: $base_text_color;
+        float: left;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    .response-header-value {
+        float: left;
+    }
+}
+
+.response-test {
+    font-family: $font;
+    list-style: none;
+    margin-bottom: 5px;
+    color: $almost_black;
+    font-size: 14px;
+
+    .response-test-name {
+        font-weight: bold;
+        float: left;
+        margin-right: 5px;
+    }
+
+
+    .response-test-value {
+        float: left;
+    }
+}
+
+.response-test-color-pass {
+    color: $green;
+}
+
+.response-test-color-failed {
+    color: $red;
+}
+
+#responsedata,
+#headers,
+#body, #code-data {
+    font-family: "Consolas", Courier, monospace, sans-serif;
+    font-size: 12px;
+}
+
+#response-status {
+    margin-top: 5px;
+    float: left;
+    margin-left: 30px;
+
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+#response-time,
+#response-status,
+#response-sample-status,
+#test-results {
+    margin-top: 8px;
+}
+
+#response-time {
+    float: left;
+    margin-left: 10px;
+
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+#response-sample-status {
+    float: left;
+    margin-left: 10px;
+}
+
+#response-time label, #response-status label, #response-sample-status label {
+    display: block;
+    width: 120px;
+}
+
+#response-time .data,
+#response-status .data {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+#response-formatting {
+    margin-top: 17px;
+    margin-bottom: 15px;
+    float: left;
+}
+
+#response-body-line-wrapping {
+    float: left;
+}
+
+#response-language {
+    float: left;
+    margin-left: 5px;
+}
+
+#response {
+    padding: 0 0 20px 20px;
+}
+
+#response {
+    display: none;
+}
+
+#response-as-text {
+    display: none;
+}
+
+#response-as-image {
+    display: none;
+    margin-top: 20px;
+
+    img {
+        border: 0;
+    }
+}
+
+.response-code {
+    cursor: pointer;
+
+    .data {
+        display: inline-block;
+    }
+}
+
+#response-actions {
+    float: left;
+    margin-top: 17px;
+    margin-left: 10px;
+}
+
+#response-pretty-modifiers {
+    float: left;
+    margin-top: 17px;
+    margin-left: 10px;
+    width: 180px;
+}
+
+#response-copy {
+    float: left;
+    margin-left: 5px;
+    margin-top: 17px;
+}
+
+#response-failed-container {
+    display: none;
+
+    .error-causes {
+        img {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+#response-as-code {
+  margin-left:-1px; //this was 1 before the chrome issue
+  overflow-x:visible; //this was auto before the chrome issue
+  font-family: "Consolas","Andale Mono", "Courier", monospace;
+}
+
+#response-waiting-container {
+    display: none;
+}
+
+#response-failed-container h3,
+#response-waiting-container h3 {
+    margin: 10px 0 10px 0;
+}
+
+#response-success-container {
+    display: none;
+}
+
+#response-tabs-cookies {
+    display: none;
+}
+
+#data-mode-selector {
+    margin-bottom: 5px;
+}
+
+#response-as-preview {
+    display: none;
+    margin-top: 5px;
+}
+
+#response-as-preview iframe {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    margin-top: 5px;
+}
+
+
+#connection-error-url {
+    font-weight: bold;
+}
+
+#response-sample-save-start-container {
+}
+
+#response-sample-save-form {
+    display: none;
+}
+
+#response-copy-container {
+    float: right;
+    margin-top: 17px;
+    margin-right: 18px;
+}
+
+#response-copy-button.zeroclipboard-is-hover { 
+    background-color: $really_light_gray;
+}
+
+#response-copy-button.zeroclipboard-is-active { 
+    background-color: $medium_light_gray;
+}
+
+#response-collection-request-actions {
+    float: left;
+    margin-left: 5px;
+    margin-top: 17px;
+}
+
+#response-headers,
+#response-tests {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 0;
+
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.xv-node {
+    padding: 0 0 0 15px;
+    font-size: 12px;
+}
+
+.xv-outline-header {
+    font-size: 16px;
+    padding: 0px 15px;
+}
+
+.xv-outline {
+    border: solid thin $base_background_border_color;
+}
+
+#xmlSourceMain {
+    position: relative;
+    float: left;
+    width: 98%;
+}
+
+.expandedXMLSource {
+    width: 93%;
+}
+
+#prettySearchToggle {
+    display: block;
+    float: left;
+    margin-right: 6px;
+    border-radius: 5px;
+}
+
+
+#response-editors .search-panel .search-field {
+    border-bottom: solid thin #999999;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #666666; 
+}
+/* End response */

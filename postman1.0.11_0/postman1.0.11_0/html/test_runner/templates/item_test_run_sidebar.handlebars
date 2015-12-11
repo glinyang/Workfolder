@@ -1,0 +1,24 @@
+<li id="sidebar-test-run-{{id}}" class="sidebar-test-run clearfix">
+    <div class="test-run-actions">
+        <a data-test-run-id="{{id}}" class="test-run-actions-download">
+            <span class="icon-download"></span>
+        </a>
+        <a data-test-run-id="{{id}}" class="test-run-actions-delete">
+            <span class="icon-delete"></span>
+        </a>
+    </div>
+    <div class="test-run" data-test-run-id="{{id}}">
+        <a data-test-run-id="{{id}}">
+            <div>
+                <span class="test-run-collection-name">{{collection.name}}</span>{{#if folder}}<span class="test-run-folder-name">/{{folder.name}}</span>{{/if}}
+            </div>
+            {{#if environment}}
+            <div class="test-run-environment-name">
+                <strong>Environment</strong> {{environment.name}}
+            </div>
+            {{/if}}
+            <div class="test-run-time" title="{{formatTime timestamp}}">            
+            </div>
+        </a>
+    </div>
+</li>

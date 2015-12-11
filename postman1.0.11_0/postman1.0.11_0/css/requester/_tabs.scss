@@ -1,0 +1,115 @@
+.request-helper-tabs,
+.postman-tabs {
+    margin: 0;
+    padding: 0;
+
+    li {
+        float: left;
+        font-size: 13px;
+        font-weight: bold;
+        list-style: none;
+        padding: 10px;
+        border-left: solid thin $base_background_border_color;
+        border-bottom: solid thin $base_background_color;
+        color: $base_light_heading_color;
+        cursor: pointer;
+        height: 15px;
+    }
+
+    li:hover {
+        color: $base_text_color;
+    }
+
+    li.active {
+        color: $base_text_hover_color;
+        height: 16px;
+    }
+
+    li:last-child {
+        border-right: solid thin $base_background_border_color;
+    }
+
+    li:first-child {
+        border-left: none;
+    }
+}
+
+.sidebar-helper-tabs {
+    position: absolute;
+    width: 110%;
+    border-bottom: solid thin $base_background_border_color;
+    left: 0;
+    height: 36px;
+
+    li {
+        color: $base_light_heading_color;
+        border-left: solid thin $base_background_border_color;
+        border-bottom: solid thin $base_background_border_color;
+        padding: 0;
+        height: 36px;
+        float: left;
+    }
+
+    li:hover {
+        color: $base_text_color;
+    }
+
+    li span {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    li.active {
+        background-color: $base_sidebar_background_color;
+        color: $base_text_hover_color;
+        border-bottom: solid thin $base_sidebar_background_color;
+        height: 36px;
+    }
+
+    li:last-child {
+        border-right: solid thin $base_background_border_color;
+    }
+}
+
+#response-top-bar {
+    border-bottom: solid thin $base_background_border_color;
+    height: 35px;
+    margin-left: -20px;
+}
+
+.response-tabs {
+    margin: 0;
+    padding: 0;
+    float: left;
+
+    li {
+        float: left;
+        font-size: 11px;
+        font-weight: bold;
+        list-style: none;
+        padding: 10px;
+        border-left: solid thin $base_background_border_color;
+        border-bottom: solid thin $base_background_color;
+        color: $base_light_heading_color;
+        cursor: pointer;
+        height: 14px;
+    }
+
+    li:hover {
+        color: $base_text_hover_color;
+    }
+
+    li.active {
+        color: $base_text_hover_color;
+        height: 15px;
+        border-bottom-color: $base_background_color;
+    }
+
+    li:last-child {
+        border-right: solid thin $base_background_border_color;
+    }
+
+    li:first-child {
+        border-left: none;
+    }
+}

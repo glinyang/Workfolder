@@ -1,0 +1,131 @@
+/*API Directory*/
+#directory-browser {
+    background: $base_background_color;
+    margin-top: -5px;
+    display: none;
+    padding-bottom: 50px;
+    overflow-y: scroll;
+
+    .directory-browser-header {
+        cursor: pointer;
+    }
+
+    #directory-collections {
+        margin-top: 5px;
+        margin-bottom: 25px;
+        overflow-y: scroll;
+        padding-bottom: 10px;
+    }
+
+    .directory-browser-header {
+        margin: 10px 0 0 20px;
+        padding-top: 8px;
+    }
+
+    .directory-browser-header-tagline {
+        color: $base_light_heading_color;
+        font-size: 12px;
+        font-weight: normal;
+        margin-left: 10px;
+    }
+
+    .directory-collection {
+        width: 250px;
+        overflow: hidden;
+        float: left;
+        margin: 10px 0 0 10px;
+        background: $base_sidebar_background_color;
+
+        padding: 15px;        
+
+        p {
+            margin: 0;
+        }
+
+        p.user_name {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        p.updated_at {
+            font-size: 11px;
+            color: #999;
+        }
+
+        p.count_requests {
+            font-size: 12px;
+            color: $base_text_color;
+            margin-bottom: 0;
+        }
+
+        .description {
+            display: none;
+            height: 100px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            margin-bottom: 5px;
+        }
+    }
+
+    .directory-browser-navigator {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        a.enabled {
+            color: #08c;
+            cursor: pointer;
+        }
+
+        a.enabled:hover {
+            text-decoration: underline;
+        }
+
+        a.disabled {
+            color: #999;
+            cursor: auto;
+        }
+
+        a.disabled:hover {
+            text-decoration: none;
+        }
+    }
+
+    .directory-browser-navigator-status {
+        float: right;
+    }
+
+    .directory-browser-navigator-next-prev {
+        float: left;
+    }
+}
+
+#directory-collection-viewer {
+    p {
+        margin: 0;
+    }
+
+    #directory-collection-viewer-user-name {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    #directory-collection-viewer-description {
+        margin-bottom: 10px;
+    }
+
+    #directory-collection-viewer-updated-at {
+        font-size: 11px;
+        color: $base_text_color;
+    }
+
+    #directory-collection-viewer-count-requests {
+        font-size: 12px;
+        color: $base_text_color;
+        margin-bottom: 0;
+    }
+}

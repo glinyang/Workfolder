@@ -1,0 +1,53 @@
+/*Form styles*/
+input.clean-input {
+    background-color: transparent;
+    color: $base_text_color;
+    padding: 5px;
+    border: none;
+    border-bottom: solid thin $base_background_border_color;
+    box-shadow: none;
+    border-radius: 0;
+    outline: none;
+}
+
+input.clean-input:focus {
+    outline: 0 !important;
+    outline-width: 0 !important;
+    border-bottom-color: $base_background_border_hover_color;
+}
+
+input.inputText {
+    border: 2px solid #cce0e9;
+    min-height: 18px;
+    width: 100%;
+    padding: 5px;
+}
+
+input.input-text-light {
+    background-color: $base_background_color;
+    border-radius: 0;
+    min-height: 18px;
+    width: 100%;
+    padding: 5px;
+    padding-left: 0px;
+
+    color: $base_text_color;
+    border: none;
+    border-bottom: solid thin $base_background_border_color;
+    box-shadow: none;
+    border-radius: 0;
+    outline: none;
+}
+
+input.input-text-light:focus {
+    border-bottom-color: $input_border_color_focus;
+    outline: none !important;
+    box-shadow: none;
+}
+
+textarea {
+    color: $base_text_color;
+    background-color: $base_background_color;
+    border-color: $base_background_border_color;
+
+}

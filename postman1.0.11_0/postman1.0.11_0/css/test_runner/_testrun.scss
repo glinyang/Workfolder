@@ -1,0 +1,333 @@
+#test-run-results-container {
+	margin-top: -1px;
+}
+
+#test-run-progress {
+	display: none;
+}
+
+#test-run-result-views {
+	margin-left: 0;
+}
+
+#test-run {
+    padding: 0 0 20px 20px;
+    border-bottom: solid thin $base_background_border_color;
+}
+
+#results {
+	display: none;
+}
+
+#test-run-status {
+	padding: 10px;
+}
+
+#test-data-file-input {
+	margin-top: 7px;
+}
+
+#test-data-file-type-container {
+	display: none;
+}
+
+#test-data-file-remove-container {
+	display: none;
+	margin-top: -5px;
+	font-size: 12px;
+}
+
+#test-run-stats {
+	display: none;
+}
+
+.test-run-stats-empty-view {
+	color: $base_text_color;
+	text-align: center;
+	font-weight: normal;
+	margin: 50px;
+	font-size: 20px;
+}
+
+.test-run-stats-content {
+	display: none;
+}
+
+.test-run-starter-form {
+}
+
+.test-run-request-result {
+	border-bottom: solid thin $base_background_border_color;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	width: 500px;
+
+	.meta {
+		.left {
+			width: 400px;
+			float: left;
+
+			.name {
+				font-weight: bold;
+			}
+
+			.url {
+				color: $base_text_color;
+			}
+		}
+
+		.right {
+			float: right;
+
+			.status-code {
+				font-weight: bold;
+			}
+
+			.time {
+				color: $base_text_color;
+				text-align: right;
+			}
+		}
+	}
+
+	.tests {
+		font-size: 13px;
+		margin-top: 10px;
+
+		.label-test-result-pass {
+			font-size: 11px;
+			text-transform: uppercase;
+			display: inline-block;
+			width: 30px;
+			text-align: center;
+			background-color: green;
+		}
+
+		.label-test-result-fail {
+			font-size: 11px;
+			text-transform: uppercase;
+			width: 30px;
+			text-align: center;
+			display: inline-block;
+			background-color: #D90000;
+		}
+	}	
+}
+
+.pass-count {
+	color: green;
+	font-weight: bold;
+}
+
+.fail-count {
+	color: #D90000;
+	font-weight: bold;
+}
+
+.test-run {
+	.test-run-collection-name {
+		font-weight: bold;
+	}
+
+	.test-run-environment-name {
+		font-size: 11px;
+	}
+
+	.test-run-time {
+		color: $base_text_color;
+		font-size: 11px;
+	}
+}
+
+.test-run-progress-content {
+	margin-bottom: 10px;
+
+	.loader {
+		margin: 10px 0 10px 0;
+
+		img {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	.test-run-collection-name {
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	.test-run-environment-name {
+		color: $base_text_color;
+		font-size: 12px;
+	}
+
+	.test-run-time {
+		color: #999;
+	}
+}
+
+.test-run-stats-viewer-header {
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+
+	.left {
+		float: left
+	}
+
+	.right {
+		float: right;
+	}
+
+	.test-run-collection-name {
+		font-size: 20px;
+	}
+
+	.test-run-folder-name {
+		color: $base_text_color;
+		font-size: 20px;
+	}
+
+	.test-run-environment-name {
+		color: $base_text_color;
+		font-size: 14px;
+	}
+
+	.test-run-time {
+		color: $base_text_color;
+	}
+}
+
+.test-run-stats-data {
+	margin-right: 10px;
+}
+
+.test-run-stats-viewer-tabs-container {
+	display: none;
+}
+
+.test-run-stats-viewer-tabs-container .nav {
+	margin-bottom: 10px;
+}
+
+.test-run-stats-overview {
+	margin-bottom: 15px;
+
+	.test-run-stats-timestamp {
+		color: $base_text_color;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+
+	.test-run-stats-pass-percentage {
+		background-color: #efefef;
+		margin-right: 40px;
+		height: 5px;
+		width: 100%;
+	}
+
+	.test-run-stats-pass-success {
+		background-color: green;
+		width: 100%;
+		height: 5px;
+	}
+
+	.results-container {
+		margin-top: 5px;
+		font-size: 16px;
+		color: #666;
+
+		.left {
+			float: left;
+		}
+
+		.right {
+			float: right;
+		}
+	}
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+.secondary-section {
+	padding: 10px;
+	padding-left: 20px;
+	display: none;
+
+	.secondary-section-back {
+		background: #333;
+		border-radius: 25px;
+		color: white;
+		padding: 7px;
+		margin-top: 10px;
+		display: block;
+		width: 100px;
+		text-align: center;
+	}
+
+	.secondary-section-back:hover {
+		background: $base_background_border_hover_color;
+		text-decoration: none;
+	}
+}
+
+#stats-request-test-grid {
+	.request-meta {
+		margin-top: 15px;
+
+		.meta {
+			.left {
+				float: left;
+
+				.name {
+					font-size: 16px;
+					font-weight: bold;
+				}
+
+				.url {
+					font-size: 14px;
+					color: #444;
+				}
+			}
+
+			.right {
+				float: right;
+
+				.status-code {
+					font-weight: bold;
+				}
+
+				.time {
+					color: #aaa;
+					text-align: right;
+				}
+			}
+		}
+	}
+
+	.request-tests {
+		table {
+			margin-top: 10px;
+
+			th, td {
+				text-align: center;
+			}
+
+			tr:hover {
+				background: #efefef;
+			}
+		}
+	}
+
+	.test-row-filter {
+		margin-top: 10px;
+	}
+}

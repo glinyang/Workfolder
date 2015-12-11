@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Collection runner</title>
+    <link rel="stylesheet" type="text/css" href="css/custom-theme/jquery-ui-1.9.2.custom.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-modal.css"/>
+    <link rel="stylesheet" type="text/css" href="js/libs/codemirror/lib/codemirror.css"/>
+    <link rel="stylesheet" type="text/css" href="js/libs/codemirror/theme/eclipse.css"/>
+    <link rel="stylesheet" type="text/css" href="css/requester/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/test_runner/styles.css"/>    
+
+    <!-- Google Analytics -->
+    <script type="text/javascript" src="ga_details.js"></script>
+    <script type="text/javascript" src="embedded_ga_host.js"></script>
+    <link rel="stylesheet" media="all" href="embedded_ga_host.css"></link>
+</head>
+<body>
+<div class="postman-navbar">
+    <div class="navbar-crumbs">
+      <span class="home">
+        <a id="navbar-crumbs-home">
+          <img src="img/crumb-home.png"/>
+        </a>
+      </span>
+      <span class="current">
+        Collection runner
+      </span>
+    </div>
+    <div id="add-ons" class="navbar-main-navigation">
+      <ul>
+        <li>
+          <a id="add-on-directory">Requester</a>
+        </li>
+    </div>
+    <div id="back-to-requester-container" class="navbar-main-navigation">
+      <ul>
+        <li>
+          <a id="back-to-request">Back</a>
+        </li>
+      </ul>
+    </div>
+    <div class="preferences">        
+        <a href="https://www.getpostman.com/docs/newman_intro"
+            class="navbar-text-link"
+            rel="tooltip"
+            data-placement="bottom"
+            data-original-title="Run collections in command line" target="_blank">Newman</a>
+        <a id="twitter-profile" href="https://www.twitter.com/postmanclient"
+           rel="tooltip" class="icon"
+           target="_blank"
+           data-placement="bottom" data-original-title="@postmanclient">
+            <img src="img/v2/twitter.png"/></a>
+        <a id="postman-docs" href="http://stage.getpostman.com/docs/jetpacks_intro"
+           rel="tooltip" class="icon"
+           target="_blank"
+           data-placement="bottom" data-original-title="Help">
+            <img src="img/v2/question_mark.png"/></a>
+    </div>
+    <div id="google-drive-status">
+        <a rel="tooltip"
+            data-placement="bottom" data-original-title="Sync">
+            <img src="img/google-drive/product32.png" style="vertical-align: middle;"/>
+        </a>
+    </div>
+    <div id="user-status">
+      <div id="user-status-false">
+          <a id="user-status-not-logged-in" rel="tooltip"
+            class="navbar-link"
+            data-placement="bottom" data-original-title="Log in to manage your shared collections">
+            Log in
+          </a>
+      </div>
+      <div id="user-status-true">
+        <div class="dropdown">
+          <a data-toggle="dropdown" id="user-status-username" class="navbar-link"></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+            <li>
+              <a href="#modal-user-collections"
+                data-toggle="modal"
+                id="user-status-shared-collections">My collections</a>
+            </li>
+            <li>
+              <a id="user-status-logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+<div id="container" class="clearfix">

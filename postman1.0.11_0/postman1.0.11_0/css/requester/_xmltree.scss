@@ -1,0 +1,34 @@
+.xv-tag-name {
+	background-color: $base_background_color;
+	color: $base_text_link_color;
+}
+
+.xv-text {
+	color: $base_text_color;
+}
+
+.xv-outline {
+	background-color: $base_background_color;
+	color: $base_text_color;
+	margin-right: -3px;
+}
+
+.xv-outline-header {
+	text-shadow: none;
+}
+
+.xv-outline-wrap {
+	margin: 10px;
+}
+
+.xv-outline-close {
+	right: -10px;
+}
+
+.xv-outline-inner {
+	padding: 0;
+}
+
+.xv-outline-collapsed .xv-outline-header {
+	margin: -10px;
+}

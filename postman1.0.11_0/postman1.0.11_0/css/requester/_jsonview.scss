@@ -1,0 +1,17 @@
+@if $current_theme == 'dark' {
+	.jv.string {
+	    color: #A6E22E;	
+	}
+
+	.jv.null {
+	    color: #F92672;
+	}
+
+	.jv.num {
+	    color: #66D9EF;	
+	}
+
+    .jv.bool {
+        color: rgb(145, 145, 246);
+    }
+}

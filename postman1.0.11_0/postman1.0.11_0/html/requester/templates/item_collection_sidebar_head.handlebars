@@ -1,0 +1,47 @@
+<li id="collection-{{id}}" data-id="{{id}}" class="sidebar-collection">
+    <div class="sidebar-collection-head">
+        <div class="collection-head-actions">
+            <a
+               data-placement="bottom"
+               rel="tooltip" data-original-title="Add folder"
+               ref="#modal-add-folder" data-toggle="modal"
+               class="collection-actions-add-folder" data-id="{{id}}" data-name="{{name}}">
+                <span class="icon-collection-new-folder"></span></a>
+            <a
+               data-placement="bottom"
+               rel="tooltip" data-original-title="Edit collection"
+               ref="#modal-edit-collection" data-toggle="modal"
+               class="collection-actions-edit" data-id="{{id}}" data-name="{{name}}">
+                <span class="icon-collection-edit"></span></a>
+            <a rel="tooltip"
+               data-original-title="Duplicate collection"
+               data-placement="bottom"
+               class="collection-action-duplicate"
+               data-id="{{id}}">
+                <span class="icon-collection-copy"></span></a>
+            <a
+               data-placement="bottom"
+               rel="tooltip" data-original-title="Share collection"
+               class="collection-actions-download" data-id="{{id}}">
+                <span class="icon-collection-share"></span></a>
+            <a rel="tooltip" data-original-title="Delete collection"
+               data-name="{{name}}"
+               data-placement="bottom"
+               href="#modal-delete-collection" data-toggle="modal"
+               class="collection-actions-delete" data-id="{{id}}">
+                <span class="icon-collection-delete"></span></a>
+        </div>
+        <div class="sidebar-collection-head-name" data-id="{{id}}">
+            <span class="sidebar-collection-head-dt">
+              <span class="icon-dt"></span>
+            </span>
+            <span class="sidebar-collection-head-cname">
+                {{name}}
+            </span>
+        </div>
+    </div>
+    <div id="collection-children-{{id}}" class="collection-children">
+      <ul id="folders-{{id}}" class="folders"></ul>
+      <ul id="collection-requests-{{id}}" class="sidebar-collection-requests"></ul>
+    </div>
+</li>

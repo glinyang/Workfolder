@@ -1,0 +1,46 @@
+<div id="modal-importer" class="modal fade">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+
+        <h3 id="importBanner">Import (beta)</h3>        
+    </div>
+    <div class="modal-body">
+        <p>
+            Import a Postman Collection, curl command or a RAML/WADL/Swagger file.
+        </p>
+
+        <div class="container">
+            <div class="modal-import-alerts"></div>
+
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#files" role="tab" data-toggle="tab">Upload files</a></li>
+                <li><a href="#rawtext" role="tab" data-toggle="tab">Paste raw text</a></li>
+                <li><a href="#link" role="tab" data-toggle="tab">Download from link</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="files">
+                    <div id="import-collection-dropzone">
+                        <h3>Drop files here</h3>
+                        <input type="file" id="collection-files-input" name="files[]" multiple/>
+                    </div>
+                </div>
+
+
+                <div class="tab-pane" id="rawtext"> <textarea id="importRawText" cols="50" rows="10"></textarea>
+                    <a id="import-submit-rawtext"
+                       class="btn btn-primary">Import</a>
+                </div>
+
+
+                <div class="tab-pane" id="link"><input type="text"  class="medium clean-input" placeholder="Enter URL and press import" id="importLink">
+                    <a id="import-submit-link"
+                       class="btn btn-primary">Import</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

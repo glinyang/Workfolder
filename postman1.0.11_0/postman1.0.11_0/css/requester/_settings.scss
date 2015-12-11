@@ -1,0 +1,86 @@
+/*Settings*/
+.add-on {
+    margin-bottom: 10px;
+
+    a {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+/* Notifications */
+#notification {
+    position: absolute;
+    display: none;
+    padding: 5px;
+    padding-top: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    background: $base_background_color;
+    color: $base_inactive_text_color;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+
+    img {
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+}
+
+#settings-theme-form {
+    display: none;
+}
+
+#settings-theme-buy-message {
+    display: block;
+}
+
+#settings-about {
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+
+    .postman-version {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .postman-links {
+        margin-top: 20px;
+    }
+    
+    .postman-links ul {        
+        list-style: none;
+        margin-left: 0;
+    }
+}
+
+//bootsrap overrides
+#modal-settings .form-horizontal {    
+  .control-label {
+    width: 240px;
+  }
+  .controls {
+    margin-left: 250px;
+  }
+}
+
+.selected-theme-thumb {
+    border: 4px solid $light_link_blue !important;
+}
+
+.theme-chooser {
+    margin-bottom: 20px;
+}
+.theme-option {
+    float: left;
+    margin-right: 40px;
+}
+
+img.theme-thumbnail {
+    border: 4px solid rgba(0,0,0,0);
+}

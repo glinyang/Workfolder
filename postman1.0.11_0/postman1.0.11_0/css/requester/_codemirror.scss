@@ -1,0 +1,52 @@
+/*Code editors*/
+.keyvaleditor-left {
+    float: left;
+    margin-right: 10px
+}
+
+.keyvaleditor-right {
+    float: left;
+    padding-top: 5px;
+}
+
+.cm-link {
+    background: $base_background_color;
+    color: $base_text_link_color;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cm-link:hover {
+    color: $base_text_hover_color;
+    text-decoration: none;
+}
+
+#response .CodeMirror {
+    margin-left: -1px; //this was -1 before the chrome issue
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+}
+
+.CodeMirror {
+    border: solid thin $base_background_border_color;
+}
+
+.CodeMirror pre {
+    font-family: Consolas, "Andale Mono", monospace;
+}
+
+#response .CodeMirror-gutter-text {
+    cursor: pointer;
+    padding-left: 1em;
+}
+
+#response .CodeMirror-scroll {
+    height: auto;
+    overflow: visible;
+}
+
+@if $current_theme == 'dark' {
+
+} @else {
+    
+}
